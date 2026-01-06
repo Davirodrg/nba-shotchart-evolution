@@ -205,3 +205,19 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Large datasets / raw data
+data_raw/
+*.zip
+*.7z
+*.parquet
+*.csv
+|data_sample/*.csv
+
+# Power BI caches
+*.pbi
+*.pbix.tmp
+
+# OS / misc
+.DS_Store
+Thumbs.db
