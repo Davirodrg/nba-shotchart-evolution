@@ -212,7 +212,7 @@ data_raw/
 *.7z
 *.parquet
 *.csv
-|data_sample/*.csv
+!data_sample/*.csv
 
 # Power BI caches
 *.pbi

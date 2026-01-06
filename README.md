@@ -1,15 +1,15 @@
 # nba-shotchart-evolution (2004 - 2025)
 
-Interactive shot chart heatmap for NNBA seasons between 2004 and 2025 with efficiency metrics and context filters (quarter / minutes left).
+Shot chart heatmap + efficiency metrics (FG%, PPS) for each of the past +20 seasons.
+Built with PostgreSQL (pgAdmin) + Power BI.
 
-## Tech
-- PostgreSQL (pgAdmin)
-- Power BI
+## Data
+Raw CSV is not stored in the repo due to size. A small sample is included under /data_sample.
 
 ## Repo structure
-- /sql: database schema + transforms + aggregations
+- /sql: SQL scripts (staging, transformations, aggregations)
 - /powerbi: PBIX report
-- /docs: screenshots
+- /docs: setup/import screenshots
 - /data_sample: small sample dataset for reference
 
 ## How to reproduce
