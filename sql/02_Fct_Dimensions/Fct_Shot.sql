@@ -1,0 +1,44 @@
+DROP TABLE IF EXISTS NBA.FCT_SHOT;
+
+CREATE TABLE NBA.FCT_SHOT AS
+SELECT
+	SEASON_1, -- Year the season ends
+	SEASON_2, -- Actual season
+	TEAM_ID,
+	TEAM_NAME,
+	PLAYER_ID,
+	PLAYER_NAME,
+	GAME_ID,
+	TO_DATE(GAME_DATE, 'MM-DD-YYYY') AS GAME_DATE, -- Initially loaded as text
+	HOME_TEAM,
+	AWAY_TEAM,
+	QUARTER,
+	MINS_LEFT,
+	SECS_LEFT,
+	(MINS_LEFT + 60 + SECS_LEFT) AS SECS_LEFT_Q,
+	EVENT_TYPE,
+	SHOT_MADE,
+	ACTION_TYPE,
+	SHOT_TYPE,
+	BASIC_ZONE,
+	ZONE_NAME,
+	ZONE_ABB,
+	ZONE_RANGE,
+	LOC_X,
+	LOC_Y,
+	SHOT_DISTANCE,
+	CASE
+		WHEN SHOT_TYPE ILIKE '%3%' THEN 1
+		ELSE 0
+	END AS IS_THREE, -- Flag to identify 3 pt shots
+	CASE
+		WHEN SHOT_TYPE ILIKE '%3%' THEN 3
+		ELSE 2
+	END AS SHOT_VALUE, -- Value in points of the shot is extracted
+	CASE
+		WHEN QUARTER = 4
+		AND (MINS_LEFT * 60 + SECS_LEFT) <= 300 THEN 1
+		ELSE 0
+	END AS IS_CLUTCH -- Shots in the last 5 minutes of the game are filtered
+FROM
+	NBA.STG_SHOTS
