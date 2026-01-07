@@ -6,6 +6,9 @@ Built with PostgreSQL (pgAdmin) + Power BI.
 ## Data
 Raw CSV is not stored in the repo due to size. A small sample is included under /data_sample.
 
+## Data model
+This model supports season filtering (2004 - 2025) using dim_season and aggregated tables for performance
+
 ## Repo structure
 - /sql: SQL scripts (staging, transformations, aggregations)
 - /powerbi: PBIX report
