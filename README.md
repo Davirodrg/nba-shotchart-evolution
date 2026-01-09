@@ -12,7 +12,7 @@ This model supports season filtering (2004 - 2025) using dim_season and aggregat
 ## Repo structure
 - /sql: SQL scripts (staging, transformations, aggregations)
 - /powerbi: PBIX report
-- /docs: setup/import screenshots
+- /docs: setup/import/minor checks screenshots
 - /data_sample: small sample dataset for reference
 
 ## How to reproduce
