@@ -7,7 +7,7 @@ Built with PostgreSQL (pgAdmin) + Power BI.
 Raw CSV is not stored in the repo due to size. A small sample is included under /data_sample.
 
 ## Data model
-This model supports season filtering (2004 - 2025) using dim_season and aggregated tables for performance
+This model supports season filtering (2004 - 2025) using dim_season and aggregated tables for performance. A bridge table is put into place to facilitate filtering between the three main dimensions (Season -> Team -> Player)
 
 ## Repo structure
 - /sql: SQL scripts (staging, transformations, aggregations)
